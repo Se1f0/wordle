@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+/* eslint-disable react/prop-types */
+import { useState } from 'react'
 
 export default function Keypad({usedKeys}) {
-    const [letters, setLetters] = useState([
+    const [letters] = useState([
         'a' , 'b' , 'c' , 'd' , 'e' , 'f' ,
         'g' , 'h' , 'i' , 'j' , 'k' , 'l' ,
         'm' , 'n' , 'o' , 'p' , 'q' , 'r' ,
