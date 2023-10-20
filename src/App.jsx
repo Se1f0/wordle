@@ -25,7 +25,7 @@ function App() {
   const getWord = async () => { 
     const response = await axios.get(randBaseURL)
     setSolution(response.data)
-    await getDef()
+    // await getDef()
   }
 
   useEffect(() => { 
