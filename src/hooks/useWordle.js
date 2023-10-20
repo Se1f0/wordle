@@ -63,7 +63,7 @@ const useWordle = (solution) => {
             setCurrentGuess(prev => prev.slice(0,-1))
         }
         if (key === 'Enter') {
-            if (turn > 5) {
+            if (turn > 6) {
                 console.log('You used all your turns')
                 return
             }
