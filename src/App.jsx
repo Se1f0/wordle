@@ -30,13 +30,12 @@ function App() {
 
   useEffect(() => { 
     getWord()
-  },[]);
+  },[setSolution]);
   
   return (
     <div className="App">
       <h1>Wordle</h1>
       {solution && <Wordle solution={solution}/>}
-      {/* {solution && <p>The solution is : {solution}</p>} */}
       {/* {definition && <p>The definition of {solution} is : {definition}</p>} */}
     </div>
   )
