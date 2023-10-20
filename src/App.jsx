@@ -30,7 +30,7 @@ function App() {
 
   useEffect(() => { 
     getWord()
-  },[setSolution]);
+  },[]);
   
   return (
     <div className="App">
