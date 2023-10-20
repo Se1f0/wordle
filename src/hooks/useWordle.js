@@ -10,7 +10,7 @@ const useWordle = (solution) => {
     // format a guess into an array of letter objects 
     // e.g. [{key: 'a', color: 'yellow'}]
     const formatGuess = () => {
-        
+        console.log('currentGuess :>> ', currentGuess);
     }
 
     // add a new guess to the guesses state
@@ -30,6 +30,21 @@ const useWordle = (solution) => {
         }
         if (key === 'Backspace') {
             setCurrentGuess(prev => prev.slice(0,-1))
+        }
+        if (key === 'Enter') {
+            if (turn > 5) {
+                console.log('You used all your turns')
+                return
+            }
+            if (history.includes(currentGuess)) {
+                console.log('You already entered this word')
+                return
+            }
+            if (currentGuess.length !== 5) {
+                console.log('You must enter a word that contains 5 letters')
+                return
+            }
+            formatGuess()
         }
     }
     
