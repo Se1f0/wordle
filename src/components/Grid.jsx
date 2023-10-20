@@ -1,4 +1,4 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
 import Row from './Row'
 
 export default function Grid({currentGuess,guesses,turn}) {
