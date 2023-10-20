@@ -10,7 +10,24 @@ const useWordle = (solution) => {
     // format a guess into an array of letter objects 
     // e.g. [{key: 'a', color: 'yellow'}]
     const formatGuess = () => {
-        console.log('currentGuess :>> ', currentGuess);
+        let solutionArray = [...solution]
+        let formattedGuess = [...currentGuess].map((l) => { 
+            return {
+                key: l,
+                color: 'grey'
+            }
+        })
+        formattedGuess.forEach((l,i) => { 
+            if (solutionArray[i] === l.key) {
+                formattedGuess[i].color = 'green'
+                solutionArray[i] = null
+            }
+            else if (solutionArray.includes(l.key) && l.color !== 'green') {
+                formattedGuess[i].color = 'yellow'
+                solutionArray[solutionArray.indexOf(l.key)] = null
+            }
+        })
+        return formattedGuess
     }
 
     // add a new guess to the guesses state
@@ -44,7 +61,8 @@ const useWordle = (solution) => {
                 console.log('You must enter a word that contains 5 letters')
                 return
             }
-            formatGuess()
+            const formatted = formatGuess()
+            console.log('formatted :>> ', formatted);
         }
     }
     
